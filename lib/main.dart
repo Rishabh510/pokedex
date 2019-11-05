@@ -32,6 +32,8 @@ class HomePageState extends State<HomePage> {
   var url =
       "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
 
+  List<bool> isSelected;
+
   PokeHub pokeHub;
 
   @override
@@ -50,8 +52,34 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final bright = MediaQuery.of(context).platformBrightness == Brightness.light;
+    isSelected[0] = bright;
     return Scaffold(
       appBar: AppBar(
+        elevation: 10,
+        actions: <Widget>[
+          ToggleButtons(
+            isSelected: isSelected,
+            onPressed: (int index) {
+              setState(() {
+                print(isSelected);
+                if (index == 0) isSelected[index] = !isSelected[index];
+                print(isSelected);
+              });
+            },
+            children: [
+              isSelected[0]
+                  ? Icon(
+                      Icons.brightness_3,
+                      color: Colors.black,
+                    )
+                  : Icon(
+                      Icons.brightness_6,
+                      color: Colors.yellow,
+                    )
+            ],
+          ),
+        ],
         title: Text("Pokedex"),
         backgroundColor: Colors.cyan,
       ),
@@ -97,7 +125,6 @@ class HomePageState extends State<HomePage> {
                                     child: Text(
                                       poke.name,
                                       style: TextStyle(
-
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.bold,
                                       ),
