@@ -32,7 +32,7 @@ class HomePageState extends State<HomePage> {
   var url =
       "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
 
-  List<bool> isSelected;
+  List<bool> isSelected = [true];
 
   PokeHub pokeHub;
 
