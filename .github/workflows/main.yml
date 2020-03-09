@@ -20,3 +20,5 @@ jobs: # work to do on : push
         with:
           artifacts: "build/app/outputs/apk/debug/*.apk" # ... this location
           token: ${{ secrets.TOKEN }} # secrets.TOKEN is API token that grants access to the repo
+          # your repo>settings>secrets>create a new token named TOKEN with value generated from
+          # settings>tokens>generate new token
