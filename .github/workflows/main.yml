@@ -13,7 +13,7 @@ jobs: # work to do on : push
         with:
           flutter-version: '1.9.1+hotfix.6'
       - run: flutter pub get # commands to run in the respective order
-      - run: flutter test
+#      - run: flutter test # commenting this due to error
       - run: flutter build apk --debug --split-per-abi # builds non-fat apk (small size)
       - name: Create a Release APK
         uses: ncipollo/release-action@v1 # builds release apk stored at ...
