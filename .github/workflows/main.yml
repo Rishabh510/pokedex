@@ -19,6 +19,7 @@ jobs: # work to do on : push
         uses: ncipollo/release-action@v1.6.1 # builds release apk stored at ...
         with:
           artifacts: "build/app/outputs/apk/debug/*.apk" # ... this location
+          tag: "v3.0"
           token: ${{ secrets.TOKEN }} # secrets.TOKEN is API token that grants access to the repo
           # your repo>settings>secrets>create a new token named TOKEN with value generated from
           # settings>tokens>generate new token
