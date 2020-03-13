@@ -16,7 +16,7 @@ jobs: # work to do on : push
       - run: flutter build apk --debug --split-per-abi # builds non-fat apk (small size)
         
       - name: Create a Release APK
-        uses: ncipollo/release-action@v1 # builds release apk stored at ...
+        uses: ncipollo/release-action@v1.6.1 # builds release apk stored at ...
         with:
           artifacts: "build/app/outputs/apk/debug/*.apk" # ... this location
           token: ${{ secrets.TOKEN }} # secrets.TOKEN is API token that grants access to the repo
